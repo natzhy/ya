@@ -1,0 +1,56 @@
+# ya
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="import" href="elements/viewer-error-screen/viewer-error-screen.html">
+  <link rel="import" href="elements/viewer-page-indicator/viewer-page-indicator.html">
+  <link rel="import" href="elements/viewer-annotation-pop-up/viewer-annotation-pop-up.html">
+  <link rel="import" href="elements/viewer-password-screen/viewer-password-screen.html">
+  <link rel="import" href="elements/shared-vars.html">
+  <link rel="import" href="edge://resources/edge_html/cr/event_target.html">
+  <link rel="import" href="edge://resources/edge_html/event_tracker.html">
+  <link rel="stylesheet" href="edge://resources/css/text_defaults_md.css">
+  <link rel="stylesheet" href="index.css">
+  <!-- Enable error-reporting -->
+  <script src="pdf-error-reporting.js"></script>
+</head>
+<body>
+
+  <!-- the contents of ui-container are react-based PDF UI components -->
+  <div id="ui-container"></div>
+
+  <!-- This is container div for the currently open modal if exists -->
+  <div id="modal-root"></div>
+
+  <div id="sizer"></div>
+
+  <div id="document-container">
+    <div id="embed-border"></div>
+  </div>
+
+  <viewer-password-screen id="password-screen"></viewer-password-screen>
+
+  <viewer-page-indicator id="page-indicator" hidden></viewer-page-indicator>
+
+  <viewer-error-screen id="error-screen"></viewer-error-screen>
+
+<viewer-annotation-pop-up id="annotation-pop-up"></viewer-annotation-pop-up>
+</body>
+<!-- Defining loadtimedata interface. -->
+<script src="edge://resources/edge_js/load_time_data.js"></script>
+<!-- Defining JobRunner construct. -->
+<script src="helpers/job_runner.js"></script>
+<script src="./setup_job_runners.js"></script>
+<!-- Initialize job runners and initialize loadtimedata. -->
+<script src="focus-visible.min.js"></script>
+<script src="edge://resources/edge_js/util.js"></script>
+<script src="edge://resources/js/promise_resolver.js"></script>
+<!-- The generated bundles from webpack. -->
+<script src="dist/pdfui_component.chunk.js"></script>
+<script src="dist/vendors~main.chunk.js"></script>
+<script src="dist/vendors~pdfui_component.chunk.js"></script>
+<script src="dist/bundle.js"></script>
+
+<script src="../main.js" type="module"></script>
+</html>
